@@ -1,0 +1,104 @@
+{% extends "index.html" %}
+
+{% block content %}
+<p>
+	<b>Source: Head First JavaScript programming, first edition 2014, paperback book.</b>
+</p>
+<p>
+	The target market for this book is beginners whose only pre-requisite knowledge is perhaps some HTML and CSS. But it moves at a steady pace even once you approach the more advanced concepts of 'closures', 'scope' and 'inheritance', so it does not patronise the reader. Instead attention is demanded through frequent games, Q&#38;ampA's and example applications.
+</p>
+<p>
+	As the title suggests this book also attempts to teach programming. In chapter two a simple text-based Battleship game is built. Just like in <a href="/bigProb">Solving big problems</a> we firstly ignore much of the end product and focus on the smaller, simpler aspects, or in this case, version of Battlership which directs our focus on functionality and, in this instance, game-flow. For example, at first we built a 1-D grid, hard-coded the ships positions and of course had no graphics. So we knew the final product to design - the rules etc - and Sensibly built a simple version of this game first. We next moved on to a high-level design, using a flowchart depicting the, well, flow of the game all in plain English. Pseudocode was then employed to help bridge the gap between design and implementation. Since the actual logic of the game is very basic (take input, check against location, do something..) the problems were not quite as tricky as those Norvig tackled but this has the advantage of introducing the reader to loops and control flow very early on in the book.
+</p>
+<p>
+	The authors make use of all the white space on the pages with illustrations and hand-drawn arrows and comments, much like a teacher would check over a pupils work. This tactic was employed to encourage the reader to slow down on important concepts, and the exercises used to reinforce those. To illustrate, there are three chapters dedicated to functions (3, 10, 11) and from the start of chapter 11 it took 16 pages to introduce us to closures. We moved from 'how to use anonymouse functions' to 'when is a function defined' to 'how to nest functions' to 'how nesting affects scope' and then 'functions revisited' where even here we're not yet told about closures only that each function has an environment attached.
+</p>
+<p>
+	This book could probably have been condensed to a third or even quarter of the size but the authors chose to cover a lot of ground considering this is aimed at complete beginners. (of course you can just skim the book). The style of the book helps the reader stay focused and engaged. At 637 pages long (not including the index!) the book manages to achieve this.
+</p>
+
+<p>
+	<b>Source: Eloquent JavaScript, second edition, available online at: <a href="http://eloquentjavascript.net/">http://eloquentjavascript.net/</a></b>
+</p>
+<p>
+	This was used as a secondary resource; mainly, it must be said, because i read the other book first. But also because it was good. This book is pitched at a level above the first and similarly does not expect knowledge of Computer Science or programming. The author has taken a more holistic approach. And more demanding. In the introduction there is mention of 'causal computing' and 'interfaces' which help put JavaScipt, and programming in general, in a grander context.
+</p>
+<blockquote>
+	Imagine a sea of bits. An ocean of them. A typical modern computer has more than 30 billion bits in its volatile data storage. Nonvolatile storage..tends to have yet a few orders of magnitude more. To be able to work with such quantities of bits without getting lost, you can separate them into chunks that represent pieces of information. In a JavaScript environment, those chunks are called <em>values</em>..Every value has a type that determines its role. There are six basic types of values in JavaScript: numbers, strings, Booleans, objects, functions, and undefined values.<footer class="quoteCite"> - Chapter one <a href="http://eloquentjavascript.net/01_values.html#h_sVZPaxUSy/">here</a>.</footer>
+</blockquote>
+<p>
+	This book attempts to be comprehensive whilst not exhaustive. It has five follow along projects; from chapter 7/21 we have code like <a href="http://eloquentjavascript.net/07_elife.html#c_Xq/SMOEf8t">this</a>. And small exercises at the end of most chapters. A whole chapter is dedicated to the value types and how they are actaully implemented rather than just how to use them.
+</p>
+<p>
+	To sum, this book can help bridge the gap between beginner to intermediate programmer by offering challenging exercises and a deeper and more broader understanding of programming via the JavaScript language. As such this book, if any use is to be made of it, requires a fair amount of investment.
+</p>
+
+<hr>
+
+<p>
+	<a href="http://www.ecma-international.org/publications/standards/Ecma-262.htm">ECMA-262</a>, also known as JavaScript, is the language of the web. The helpful conceptual understanding is that it adds <i>behaviour</i> to a web page or makes it dynamic. The actual code is either embedded straight into the HTML or a file is linked to via the <em>&lt;script&gt;</em> tag. And all browsers employ some type of <i>engine</i> to parse and interpret JavaScript. Chrome currently uses the open source <a href="https://en.wikipedia.org/wiki/V8_%28JavaScript_engine%29">V8</a> engine.
+</p>
+<p>
+	JavaScript:
+</p> 
+<blockquote>
+	gives you a way to add programming to your page so that you can compute, react, draw, communicate, alert, alter, update, change.. anything dynamic..<footer class="quoteCite"> - Head First JavaScript Programmming, page 2, first edition</footer>
+</blockquote>
+<p> 
+	When a browser parses the HTML it also creates what is a called a document object model or DOM. This is a data structure but more importantly an <a href="/apiNotes">API</a>. It represents the entire page; that includes all HTML elements, preserving their structure, and all the attributes and their values and the actual content (text/HTML) of each. To create, update, change or remove elements and/or their properties we do so by invoking methods on the global document object. These methods will - upon success - return the desired element/s which are JavaScript objects. Changes made to the DOM will take effect immediately (well almost!). But to take advantage of the DOM we need to know about <em>events</em>.
+</p>
+<blockquote>
+	..after the browser retrieves and displays your page, it does'nt just sit there. Behind the scenes, alot is going on: users are clicking buttons, the mouse location is being tracked..windows are getting resized..All these things cause <i>events</i> to be triggered.<br>Whenever there's an event, there is an oppurtunity for your code to <i>handle</i> it<footer class="quoteCite"> - Head First JavaScript Programmming, page 383, first edition</footer>
+</blockquote>
+<p>
+	So when an event occurs the browser will check for any code to run. To illustrate, if an element on the page is clicked the browser will check that element's <em>onclick</em> property; and if that value is in fact a function then it is invoked. This function is known symantically as an event handler. 
+</p>
+
+<!-- JavaScript demo -->
+<img src="/resources/udacityLogo.png" id="udacityLogo" alt="That's a shame! I'm supposed to be a Udacity logo. click on me anyway">
+<p style="text-align: center">Click the image above. A handler is assigned to this image element's <em>onclick</em> property.
+</p>
+
+<p>
+	Browsers maintain event queues that are stacked chronologically (oldest to most recent). These are then processed sequentially. The browser will check each event for any handlers; if found they are invoked. For many events - an <em>event object</em> is passed as the first argument to this function. This event object will contain data specific to the event (not the same for all). Examples include: the element in which the event occured; the location of the mouse click; any keys pressed.
+</p>
+<p>
+	This type of coding, where the algorithm or program is non-linear is called <em>asynchronous</em> programming. That is, when we do not know beforehand what function or peice of code is going to be executed and in what order. The determining factor in the majority of these cases is a human user. So the design of the program is centred on <i>reacting</i> to events as and when they should occur.
+</p>
+
+<hr>
+
+<h4>Primitive types.</h4>
+<dl>
+	<dt>Booleans</dt>
+	<dd>Like Python uses true/false except both are capitalized.</dd>
+	<dt>Numbers</dt>
+	<dd>Unlike Python JavaScript has only one numeric type; a floating point number (the same as Python's).</dd>
+	<dt>Strings</dt>
+	<dd>These work pretty much the same except Python allows string slicing via bracket notation whilst JavaScript requires the string.slice method.</dd>
+</dl> 
+<h4>Complex types</h4>
+<dl>
+	<dt>Arrays</dt>
+	<dd>Are used as data structures. They are similiar to Python's list type  and use the same notation for indexing elements and invoking methods.</dd>
+
+	<dt>Functions</dt>
+	<dd>Functions in JavaScript have first-class status. 
+		<blockquote>
+			<b>First class:</b> a value that can be treated like any other value in a programming language, including the ability to be assigned to a variable, passed as an argument, and returned from a function.
+			<footer class="quoteCite"> - Head First javaScript Programming, page 442, first edition.</footer>
+		</blockquote>
+	In Python we just declare and then call functions. In JavaScript there is the <i>function declaration</i> where by a function is created and assigned to a variable, which works pretty much like Python functions. One difference comes from how JavaScript is parsed by the browser: briefly, the browser, before executing any code, scans the JavaScript for these declarations. If found the function value is assigned to the name given. They therefore can be invoked anywhere in the code, assuming they were defined at the top (global scope) level, not within a function: this process known as <em>hoisting</em> where JavaScript moves all declarations (function or variable) to either the beginning of the script or function depending on where it was initially defined. And since functions are values just like the others we can create and store a function reference just like how we store strings and such to variables. These references are no different to a function declaration except they are executed in the normal flow of the code and so like Python must be defined before invocation.<br><br>
+
+	All expressions evaluate to a value. This means we do not have to assign functions to a variable instead we could use the computed value from them just like we would any expression: nameless functions such as these are known as <i>anonymous functions</i>. But there are more interesting things that can be done. For example we can assign an anonymous function to handle an event. In this case we have avoided adding another name to our namespace.<br><br>
+
+	Exploring functions further we note that JavaScript has <em>lexical scope</em>. That is, the available stored name:values can be determined by the structure of the code. Functions in JavaScript are the only way to add new <i>scope</i>; otherwise all values would be global disallowing the separation of data. Variables defined in the function and any parameters are <em>local</em>. Each function and, each nested function, has access to the names local to them and any outer function "up" to the global level; in fact when values are searched the browser prioritises the local scope working it's way to the global scope. Every function has what is called an environment attached to it that contains all local variables within it's enclosing scope and any variables referenced not defined locally (free variables). Now, when you have a function with an environment that has values for any free variables and is executed outside of it's defining scope this function is known as a <em>closure</em>. What makes closures so useful is that when they are returned from functions or passed as arguments or assigned as handlers their data can be made private. The environment is not some copy it is "live"; the variable references point to the original data: so depending on how it was defined the data can be made inaccessible other than from the closure itself.</dd>
+
+	<dt>Objects</dt>
+	<dd>Python requires the use of a constructor, a class definition, before objects can be created; with JavaScript an object can be created without a contructor. These are called <i>object literals</i> as they are, literally, written out in their entirety: done using the familiar name value pairs denoted by the colon and demarcated with a comma. The methods are just property names where their value is a function expression. Object literals are best suited for niche circumstances as duplicating and altering later on is awkward.<br><br>
+
+	JavaScript can of course make use of a constructor. It is simply a function with it's properties separated by the semi-colon. The keyword <em>this</em>, like python's <em>self</em>, is used to refer to the object upon which properties are accessed and method invoked and so are included when assigning property values. By convention constructor names are capitalized. To instantiate an object from a constructor the <em>new</em> keyword is used. This keyword creates a new empty object; sets the keyword <i>this</i> to point to it; executes the body of the function assigning values to properties in this new object and then returns a reference (<i>this</i>).<br><br>
+
+	JavaScript employs what is called <em>Prototypal Inheritance</em>. When an object is created via a constructor it is assigned a <em>prototype</em> property. This points to an empty object that can act as a parent object  passing properties and methods on. [note this process is the reverse to Python's]. Overriding of properties is achieved in the same manner as Python; The resolution order means the interpreter/engine checks the object in question first then proceeds through the prototype chain until it reaches the object which all objects inherit from. Multiple inheritance is not supported as there can only be one prototype object assigned. A work around would be to chain the prototypes - this has the benefit of avoiding resolution issues as the order of precedence is unambiguous. Also it must be noted that changes to an object's prototype will take effect immediately: all instances of that prototype will be effected.<br><br></dd>
+</dl>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends "index.html" %}
+
+{% block content %}
+<h4>Recursion</h4>
+<p>
+	<blockquote>Recursion in computer science is a method where the solution to a problem depends on solutions to smaller instances of the same problem (as opposed to iteration)<footer class="quoteCite">Wiki quote</footer></blockquote>
+
+	Most programming languages can implement recursion by allowing functions to invoke themselves. I was first introduced to the idea of recursion in Udacity's <a href="https://www.udacity.com/course/intro-to-computer-science--cs101">cs101</a> course. The aim of the course is to build a search engine. In doing so it is necessary to build an index of links (and associated keywords) and to somehow rank the links so our search results would be useful. We used what is called the <i>relaxation algorithm</i>; a default value is given and then over time this value is changed and made more accurate. A page's ranking was the summation of the page rank values of all the pages that link to it; and in turn, likewise, those page's rankings were defined in the same manner and so on. Sadly we did'nt actually use a recursive function!
+</p>
+<p>
+	Instead, to demonstrate a recursive function, we were shown the popular example of the factorial function that calculates fibonacci's sequence. A recursive function must have both a <i>base case</i> and a <i>recursive case</i>. The idea of the base case is to be the stopping point of the recursion; usually returning some value to some variable within the function it was called from. In our case it was when the input value was either 0 or 1 of which a direct value is returned. The recursive case is simply when the conditional base case does not apply (when the input value is > 1). In many cases some computation will take place but almost always the function will invoke itself with a different input value. An answer or value is returned <em>only</em> on the base cases where the values are passed through all of the function calls to the original caller. 
+</p>
+<h4>Parallel Computing</h4>
+<p>
+	The general idea is to have multiple resources each process different parts of a problem simultaneously. It's opposite is serial computing. Operating systems employ a similiar concept; allocating processing power or clock cycles to several tasks can create the allusion that the computer is doing many things at once: indeed the computer can do so given it has multiple processing units. This concept would appear to have broad application. Real world phenomena such as galaxy formation, the weather, traffic, are all, according to <a href="https://computing.llnl.gov/tutorials/parallel_comp/">this site</a> examples of "complex, interrelated events [that] are happening at the same time, yet within a temporal sequence" 
+</p>
+{% endblock %}

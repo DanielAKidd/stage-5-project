@@ -1,0 +1,54 @@
+body {
+	background-color: #C5C1F5;
+	box-sizing: border-box;
+}
+
+header {
+	background-color: #086FFF;
+	color: #ffffff;
+	text-align: center;
+	padding: 10px;
+	font: 15px, serif;
+}
+
+p {
+	padding: 0 40px;
+}
+
+blockquote {
+	font-family: 'Roboto Condensed', sans-serif;
+	padding: 10px 20px;
+}
+
+.document {
+	/* to create document look */
+	background-color: #ffffff;
+	margin: 50px;
+	/* text */
+	line-height: 1.8;
+	font-family: Georgia, "Times New Roman", sans-serif;
+	padding: 20px 40px;
+}
+
+.navLinks {
+	display: inline;
+	padding: 5px;
+	background-color: #E65C00;
+	border-radius: 5px;	
+}
+.nav {
+	color: #ffffff;
+	text-decoration: none;
+	padding: 0px 5px;
+}
+
+.quoteCite {
+	text-indent: 10px;
+	font-style: italic;
+	font-size: smaller;
+}
+
+#udacityLogo {
+	display: block;
+	margin:  0 auto;
+}

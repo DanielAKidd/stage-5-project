@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
+		<link href='https://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'>
+		<title>stage 5 notes</title>
+		<script type="text/javascript">
+			//
+			window.onload = init;
+			function init() {
+				imObject = document.getElementById("udacityLogo");
+				imObject.onclick = showMsg;
+				// handler function
+				function showMsg (eventObj) {
+					var image = eventObj.target;
+					image.src = "/resources/msg.png";
+					// first arg is an anonymous function. a callback 
+					//scope..
+					setTimeout(function () {image.src = "/resources/udacityLogo.png";}, 2000);
+				}
+			}
+		</script>
+	</head>
+
+	<body>
+		<main class="document">
+			<header>
+				<h2>Project 5 Notes</h2>
+				<nav class="navLinks">
+					<a class="nav" href="/">JavaScript</a> |
+					<a class="nav" href="/apiNotes">API</a> |
+					<a class="nav" href="/rp">Recursion and Parallel Computing</a> |
+					<a class="nav" href="/bigProblems">Solving big problems</a>
+				</nav>
+			</header>
+
+			<article>
+				{% block content %}
+				{% endblock %}
+			</article>
+		</main>
+	</body>
+</html>

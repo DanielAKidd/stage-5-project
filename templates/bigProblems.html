@@ -1,0 +1,27 @@
+{% extends "index.html" %}
+
+{% block content %}
+<P>
+	Peter Norvig followed the Code-Test-Refine development plan. This is necessarily preceeded by dividing a problem into a set of smaller related tasks to solve said problem. In turn, these parts should be divided further until we have actionable tasks. These tasks Should be easily definable, perhaps summed up in a sentence, and measurable. Non essential aspects can be initially ignored (although Norvig does test the runtime speed of some gameplay logic as he progresses). In this example concerns about data partitioning and implementation were ignored whilst the focus was on the program's functionality.<br>
+
+	Some general guidelines that can be taken from the videos:
+	<ul>
+		<li>
+			 As a rule of thumb: We should be able to articulate the task into an <a href="http://www.catb.org/~esr/faqs/smart-questions.html">intelligent question</a>. Not only, then are we focused on a single goal but asking for help and searching for answers becomes a great deal more efficient when we know exactly what it is we need to do.
+		</li>
+		<li>
+			Be explicit in early function builds rather than concise. The idea being that we will want to customise or reuse code as the program grows.
+		</li>
+		<li>
+			Keep functions/classes as generalised as the context allows for code reuse.
+		</li>
+		<li>
+			Problem descriptions and code implementation are two distinct modes of thinking. Before any code was written not only had Norvig understood what it was he wanted to achieve overall, but any further subtle steps within a function were explicitly noted.
+		</li>
+		<li>
+			Make use of the regression test. That is, the results of testing should remain <em>constant</em> as changes to the program code are made. The implicit idea being that although the results may not be <em>correct</em> (according to the demands of how the final program is structured) consistancy would indicate that the functionality is not broken as the code evolves. (This is particularly important with the development plan Norvig was following)
+		</li>
+	</ul>
+	There are two points that i think are worth noting down. Norvig's method or development plan is particularly suited to inexperienced programmers, who by definition cannot conceive of all or even most issues that will arise. And, by following good habits we are able to direct our attention and focus on clearly defined objectives.
+</P>
+{% endblock %}
